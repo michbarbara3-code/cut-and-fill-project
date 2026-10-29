@@ -10,9 +10,7 @@ A Python-based tool designed to calculate earthwork volumes (Cut and Fill) betwe
 
 Prerequisites
 You need Python installed on your computer.
-You also need the plotly library. 
-To install Plotly, run:
-                       Pip install plotly
+To install the required libraries,run: pip install -r requirements.txt
 
 How to Run
 1. Clone this repository or download calculator.py.
