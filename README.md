@@ -34,12 +34,6 @@ How to Run This Program
 2. Install the graphing library: pip install matplotlib
 3. Run main.py. The program will read sample_stations.csv, print the report, and display the graph.
 
-```
 
-### Step 3: The Magic Drag-and-Drop
-This is the most important part!
-1. Open your **Pictures** folder (the one in your screenshot) next to your browser.
-2. Click and hold the image named **`cut and fill out put`**, and **drag it directly into the GitHub text box** right where it says `*(Drag your Terminal Image here)*`. 
-   *(You will see GitHub upload it and turn it into a long link).*
 3. Click and hold the image named **`mass haul diagram project`**, and **drag it directly into the GitHub text box** right where it says `*(Drag your Graph Image here)*`.
 4. Delete those `*(Drag your Terminal Image here)*` placeholder texts if they are still there.
