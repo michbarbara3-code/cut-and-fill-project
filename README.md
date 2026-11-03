@@ -1,3 +1,5 @@
+<img width="800" height="685" alt="mass haul diagram project " src="https://github.com/user-attachments/assets/a91da109-5f05-4f85-ba73-006888efe327" />
+<img width="510" height="319" alt="cut and fill out put " src="https://github.com/user-attachments/assets/7fa9055b-51a8-43d8-9ca1-c672cb988361" />
 # Cut and Fill Volume Calculator with Mass Haul Analysis
 **Group 8 Coursework Project**
 
