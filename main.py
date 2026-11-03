@@ -1,12 +1,11 @@
 import csv
 import matplotlib.pyplot as plt
 
-# --- PART 1: READ THE CSV FILE ---
+# Read the data from the csv file
 stations = []
-
 with open('sample_stations.csv', mode='r') as file:
     reader = csv.reader(file)
-    next(reader) # Skips the header row
+    next(reader) # skip the header
     
     for row in reader:
         chainage = float(row[0])
@@ -14,46 +13,51 @@ with open('sample_stations.csv', mode='r') as file:
         fill = float(row[2])
         stations.append([chainage, cut, fill])
 
-# --- PART 2: DO THE MATH & MASS HAUL ---
-print("--- Earthwork Volume Report ---")
+print("=" * 65)
+print("                  EARTHWORK VOLUME REPORT")
+print("=" * 65)
+print(f"{'Chainage':<10} | {'Cut Vol':<10} | {'Fill Vol':<10} | {'Mass Haul'}")
+print("-" * 65)
 
-total_cut = 0.0
-total_fill = 0.0
-mass_haul = 0.0
+total_cut = 0
+total_fill = 0
+mass_haul = 0
 
-plot_chainages = []
-plot_mass_haul = []
+x_values = []
+y_values = []
 
 for i in range(len(stations) - 1):
-    station1 = stations[i]
-    station2 = stations[i + 1]
+    s1 = stations[i]
+    s2 = stations[i + 1]
     
-    L = station2[0] - station1[0]
+    distance = s2[0] - s1[0]
     
-    cut_volume = (L / 2) * (station1[1] + station2[1])
-    fill_volume = (L / 2) * (station1[2] + station2[2])
+    # End Area Method formula
+    cut_vol = (distance / 2) * (s1[1] + s2[1])
+    fill_vol = (distance / 2) * (s1[2] + s2[2])
     
-    total_cut += cut_volume
-    total_fill += fill_volume
+    total_cut = total_cut + cut_vol
+    total_fill = total_fill + fill_vol
     
-    net = cut_volume - fill_volume
-    mass_haul += net
+    # Mass Haul is cut minus fill, added to the running total
+    net = cut_vol - fill_vol
+    mass_haul = mass_haul + net
     
-    plot_chainages.append(station2[0])
-    plot_mass_haul.append(mass_haul)
+    x_values.append(s2[0])
+    y_values.append(mass_haul)
     
-    print(f"Chainage {station2[0]} -> Cut: {cut_volume:.2f} | Fill: {fill_volume:.2f} | Mass Haul: {mass_haul:.2f}")
+    # Print the results for this section with clean formatting
+    print(f"Ch {int(s2[0]):<7} | {cut_vol:<10.2f} | {fill_vol:<10.2f} | {mass_haul:.2f}")
 
-print(f"\nTotal Cut: {total_cut:.2f}")
-print(f"Total Fill: {total_fill:.2f}")
+print("-" * 65)
+print(f"TOTAL CUT VOLUME:  {total_cut:.2f} m3")
+print(f"TOTAL FILL VOLUME: {total_fill:.2f} m3")
+print(f"FINAL MASS HAUL:   {mass_haul:.2f} m3")
+print("=" * 65)
 
-# --- PART 3: DRAW THE GRAPH ---
-plt.figure(figsize=(8, 5)) 
-plt.plot(plot_chainages, plot_mass_haul, marker='o', color='blue', linestyle='-')
-
+# Draw the graph
+plt.plot(x_values, y_values, marker='o')
 plt.title("Mass Haul Diagram")
-plt.xlabel("Chainage (m)")
-plt.ylabel("Cumulative Volume (m3)")
-plt.grid(True) 
-
+plt.xlabel("Chainage")
+plt.ylabel("Volume")
 plt.show()
