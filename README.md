@@ -7,10 +7,10 @@ This program reads survey data from a CSV file, calculates earthwork volumes (Cu
 ## Final Output
 
 ### 1. Terminal Text Report
-![Terminal Output](terminal_output.png)
+![Cut and Fill Output](terminal_output.png)
 
 ### 2. Mass Haul Diagram
-![Mass Haul Diagram](graph.png)
+![Mass Haul Diagram project](graph.png)
 
 ## How to Run This Program
 1. Ensure Python 3 is installed.
