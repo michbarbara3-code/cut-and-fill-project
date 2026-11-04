@@ -26,13 +26,12 @@ FINAL MASS HAUL:   328.00 m3
 ```
 
 2. Visual Output
+<img width="450" alt="cut and fill out put " src="https://github.com/user-attachments/assets/708a6d7b-8734-47ec-b67a-f3650d4f7d6c" />
+<img width="500" alt="mass haul diagram project " src="https://github.com/user-attachments/assets/de4b19b0-b7ab-4a87-8296-0e98f542ee59" />
 
-[DRAG AND DROP YOUR PICTURES HERE]
 
 How to Run This Program
 
 1. Ensure Python 3 is installed.
 2. Install the graphing library: pip install matplotlib
 3. Run main.py. The program will read sample_stations.csv, print the report, and display the graph.
-<img width="800" height="685" alt="mass haul diagram project " src="https://github.com/user-attachments/assets/6ae0df5f-7294-41fe-967d-885a0a96207d" />
-<img width="510" height="319" alt="cut and fill out put " src="https://github.com/user-attachments/assets/133b53fb-2816-4d3e-bc6c-e645f468032f" />
